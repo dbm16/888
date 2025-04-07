@@ -1,0 +1,122 @@
+.mission-section {
+  background-color: #0b1d26;
+  padding: 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-top: 4px solid #fbd784;
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mission-container {
+  display: flex;
+  gap: 40px;
+  padding: 40px ;
+  max-width: 1300px;
+  margin: 0 auto;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.mission-content {
+  flex: 1;
+  padding: clamp(20px, 4%, 40px) 0;
+  text-align: right; 
+  margin-left: auto; 
+  max-width: 600px; 
+}
+
+.mission-image-container {
+  flex: 1;
+  width: 45%; 
+  position: relative;
+}
+
+.mission-image {
+  width: 80%; 
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: block;
+}
+
+.dot-image {
+  width: clamp(100px, 17%, 140px);
+  border-radius: 5px;
+  position: absolute;
+  z-index: 1;
+  animation: floatAnimation 3s ease-in infinite alternate;
+}
+
+
+
+.mission-description {
+  font-size: clamp(28px, 1.5vw, 38px);
+  line-height: 1.8;
+  margin-bottom: 30px;
+  color: white;
+  text-align: right;
+}
+
+.pagination-dots {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end; 
+  margin-top: 40px;
+}
+
+.pagination-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: #fff;
+  opacity: 0.3;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  transform: scale(1);
+}
+
+.pagination-dot.active {
+  opacity: 1;
+  background-color: #f3be45; 
+  box-shadow: 0 0 10px #f3be45;
+  transform: scale(1.2);
+  width: 30px; 
+  border-radius: 100px; 
+}
+
+
+
+
+.mission-title {
+  font-size: 105px;
+  font-family: 'AlmoniTzarDemiBold';
+  margin-bottom: clamp(15px, 3vw, 30px);
+  margin-top: 45px;
+  position: relative;
+  transform: scale(0.95);
+  transition: transform 0.4s ease;
+}
+
+.mission-title:hover {
+  transform: scale(1);
+  color: var(--accent-color);
+}
+
+.mission-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent-color);
+  transition: width 0.4s ease;
+}
+
+.mission-title:hover::after {
+  width: 120px;
+}
+

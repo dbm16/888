@@ -1,0 +1,419 @@
+.rememb-section {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+  direction: rtl;
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: clip; 
+  direction: rtl;
+}
+
+.hero-content {
+  max-width: clamp(300px, 50vw, 800px);
+  margin-right: clamp(20px, 8%, 133px);
+  width: 100%;
+}
+
+/* Memorial cards layout */
+.memorial-cards-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  direction: rtl;
+  background-color: rgba(11, 29, 38, 0.5);
+  padding: 25px;
+  margin: 25px;
+  border-radius: 20px;
+
+}
+.rem-die {
+  display: flex;
+  flex-direction: row;
+}
+.rem-die > .left {
+  flex: 7;
+}
+.candlelogo
+{
+  width: 70px;
+}
+
+.rem-die > .right {
+  flex: 3;
+}
+
+.rem-description {
+  font-size: clamp(66px, 2.5vw, 68px);
+  font-family: 'AlmoniTzarBold', sans-serif;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 30px;
+  color: white;
+  position: relative;
+  display: inline-block; 
+  letter-spacing: 0.8px; 
+  margin:0px 60px 0 0px;
+}
+
+
+.rem-description::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; 
+  right: 0;
+  width: 100%;
+  height: 6px; 
+  background-color: #fbd784; 
+  border-radius: 50px; 
+}
+
+/* Memorial cards container and scrolling */
+.memorial-cards-container {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+
+.memorial-cards-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  width: 100%;
+  gap: 30px;
+}
+
+.memorial-cards-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Individual memorial card */
+.memorial-card {
+  min-width: 300px;
+  height: 400px;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  
+}
+
+.memorial-card:hover {
+  box-shadow: 0 0 20px rgba(251, 215, 132, 0.4);
+}
+
+.memorial-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, rgba(251, 215, 132, 0.3), transparent);
+  transform: rotate(0deg);
+  animation: shine 3s linear infinite;
+  z-index: 0;
+}
+
+
+
+
+.memorial-card.active {
+  border: 2px solid #fbd784;
+}
+
+.memorial-card-picture {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+}
+
+.ner-candle {
+  max-height: 80px;
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateY(50%);
+  max-width: 50px;
+  z-index: 5;
+  filter: drop-shadow(0 0 8px rgba(255, 200, 0, 0.7));
+  animation: flicker 1.2s infinite alternate;
+  justify-content: space-around;
+}
+
+.memorial-card-picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.memorial-card:hover .memorial-card-picture img {
+  transform: scale(1.05);
+}
+
+.memorial-card-info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  background-color: #0f2434;
+}
+
+.memorial-card-title {
+  font-size: 40px;
+  margin-bottom: 10px;
+  color: #fbd784;
+  font-family: 'AlmoniTzarBold', sans-serif;
+  position: relative;
+  display: inline-block; 
+  padding-bottom: 10px; 
+}
+.memorial-card-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 50%;
+  height: 2px;
+  bottom: 7px;
+  background-color: #fff; 
+  border-radius: 50px;
+}
+
+.memorial-card-description {
+  font-size: 21px;
+  line-height: 1.4;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2; 
+}
+
+/* Scroll buttons */
+.scroll-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #fbd784;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  position: absolute;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.scroll-button:hover {
+  background-color: #0B1D26;
+  color: #fbd784;
+}
+
+.scroll-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 5px rgba(59, 130, 246, 0.5);
+}
+
+.scroll-left {
+  left: 10px;
+}
+
+.scroll-right {
+  right: 10px;
+}
+
+/* Card indicators */
+.cards-indicator {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  gap: 10px;
+}
+
+.indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.indicator-dot.active {
+  background-color: #fbd784;
+  transform: scale(1.2);
+}
+
+.indicator-dot:hover {
+  background-color: #bbb;
+}
+/* Modal Layout */
+.memorial-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  direction: rtl;
+}
+
+.memorial-modal {
+  background-color: #0b1d26;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  height: auto;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  animation: modalFadeIn 0.3s ease;
+  overflow: hidden;
+}
+
+@keyframes modalFadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Updated close button styling */
+.modal-close-button {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 100px;
+  background-color: #0B1D26;
+  border: 1px solid #fbd784;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 35px;
+  color: #fbd784;
+  z-index: 10;
+  transition: all 0.2s ease;
+}
+
+.modal-close-button:hover {
+  background-color: #0a1a22;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+.memorial-modal-content {
+  display: flex;
+  flex-direction: column;
+  max-height: 85vh;
+}
+
+.memorial-modal-image {
+  width: 100%;
+  height: 300px;
+  position: relative;
+}
+
+.memorial-modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.memorial-modal-info {
+  padding: 30px;
+  overflow-y: auto;
+  max-height: 350px;
+}
+
+.memorial-modal-title {
+  font-size: clamp(32px, 5vw, 48px);
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #fbd784;
+  color: #fbd784;
+  font-family: 'AlmoniTzarBold', sans-serif;
+}
+
+.memorial-modal-description {
+  font-size: 24px;
+  line-height: 1.6;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 767px) {
+  .memorial-modal-image {
+    height: 200px;
+  }
+
+  .memorial-modal-info {
+    padding: 20px;
+    max-height: 300px;
+  }
+
+  .memorial-modal-title {
+    font-size: 28px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+  }
+
+  .memorial-modal-description {
+    font-size: 14px;
+  }
+}
+
+/* For very small screens */
+@media (max-width: 480px) {
+  .memorial-modal {
+    width: 95%;
+    max-height: 85vh;
+  }
+  
+  .memorial-modal-image {
+    height: 180px;
+  }
+  
+  .memorial-modal-info {
+    max-height: 250px;
+  }
+}
