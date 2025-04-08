@@ -6,8 +6,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;  /* במקום center */
-    overflow-x: hidden;           /* שים לב! לא hidden לגמרי */
+    justify-content: flex-start;  
+    overflow-x: hidden;           
     padding: 0;
     margin: 0;
     
@@ -108,7 +108,7 @@
   
   .support-action {
     position: absolute;
-    bottom: 3%;
+    bottom: 7%;
     left: var(--content-padding);
     z-index: 10;
   }

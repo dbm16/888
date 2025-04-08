@@ -104,14 +104,7 @@ body {
   }
 }
 
-.mission-image-container {
-  flex: 1;
-  width: 73%;
-  position: relative;
-  opacity: 0;
-  transform: translateX(-50px);
-  animation: slideInLeft 0.8s forwards 0.2s;
-}
+
 
 @keyframes slideInLeft {
   to {
@@ -120,16 +113,6 @@ body {
   }
 }
 
-.mission-image {
-  width: 55%;
-  border-radius: 5px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-  display: block;
-}
-
-.mission-image:hover {
-  transform: scale(1.05) translateY(-10px);
-}
 
 
 
