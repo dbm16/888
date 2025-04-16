@@ -379,6 +379,44 @@ html, body {
   color: #fff;
   margin-bottom: 20px;
 }
+.modal-action-button {
+  position: absolute;
+  bottom: 18px;
+  left: 35px;
+  padding: 10px 20px;
+  background-color: #fbd784;
+  color: #0B1D26;
+  border: none;
+  border-radius: 8px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 5;
+  direction: rtl;
+}
+
+.modal-action-button:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjust the modal content bottom padding to make room for the button */
+.memorial-modal-info {
+  padding: 30px;
+  padding-bottom: 60px; /* Increased padding to make room for the button */
+  overflow-y: auto;
+  max-height: 350px;
+}
+
+/* Mobile responsiveness for the button */
+@media (max-width: 767px) {
+  .modal-action-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
 
 /* Responsive adjustments */
 @media (max-width: 767px) {
@@ -416,4 +454,5 @@ html, body {
   .memorial-modal-info {
     max-height: 250px;
   }
+  
 }

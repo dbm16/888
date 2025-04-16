@@ -67,21 +67,16 @@ const Remember = () => {
         ))}
       </div>
 
-      {/* Content */}
       <div className="hero-container">
         <div className="hero-content">
           <div className="logo-container">
             <img src="/logo.png" alt="Military Emblem" className="logounit" />
           </div>
-          <div className="mission-image-container">
-            <img src="/dot888.png" alt="נקודה דקורטיבית" className="dot-image" />
-          </div>
+        
           <h1 className="hero-title">מבנה וארגון</h1>
-          <p className="hero-description">לורם איפסום דולור סיט אמט, קונסקטורר אדיפיסינג אלית קולהע צופעט למרקוח איבן איף, ברומץ כלרשט מיחוצים. קלאצי סחטיר בלובק. תצטנפל בלינדו למרקל אס לכימפו, דול, צוט ומעיוט - לפתיעם ברשג - ולתיעם גדדיש. קוויז דומור ליאמום בלינך רוגצה. לפמעט          </p>
         </div>
       </div>
 
-      {/* בתוך ה-menu-cards-wrapper */}
 <div className="menu-cards-wrapper">
   <div className='rem-die'>
     <p className="rem-description">תפריט מהיר</p>

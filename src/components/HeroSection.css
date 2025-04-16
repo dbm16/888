@@ -55,7 +55,6 @@
     font-size: clamp(64px, 8vw, 125px);
     font-family: 'AlmoniTzarBold';
     font-weight: bold;
-    margin-top: 45px;
     line-height: 1.1;
   }
   
@@ -68,7 +67,7 @@
   
   .logounit
   {
-    width: 18%;
+    width: 15%;
     animation: floatAnimation 3s ease-in infinite alternate;
   }
   

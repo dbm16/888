@@ -45,9 +45,6 @@ const HeroSection = () => {
           <div className="logo-container">
             <img src="/logo.png" alt="Military Emblem" className="logounit" />
           </div>
-          <div className="mission-image-container">
-            <img src="/dot888.png" alt="נקודה דקורטיבית" className="dot-image" />
-          </div>
           <h1 className="hero-title">סדרי ממדית</h1>
           <p className="hero-description">
             אתר ניהול הידע של היחידה הרב ממדית המאגד את כלל הנהלים , הפקודות והתרבות הארגונית של היחידה.

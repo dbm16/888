@@ -49,6 +49,14 @@ const Remember = () => {
     }
   ];
 
+  // Function to handle action button click
+  const handleActionButtonClick = (e) => {
+    e.stopPropagation(); // Prevent closing the modal
+    // Add your button click logic here
+    console.log("Action button clicked for:", selectedCard.title);
+    // You could implement sending condolences, sharing the memorial, etc.
+  };
+
   // Effect for background image rotation
   useEffect(() => {
     const interval = setInterval(() => {
@@ -163,9 +171,7 @@ const Remember = () => {
           <div className="logo-container">
             <img src="/logo.png" alt="Military Emblem" className="logounit" />
           </div>
-          <div className="mission-image-container">
-            <img src="/dot888.png" alt="נקודה דקורטיבית" className="dot-image" />
-          </div>
+         
           <h1 className="hero-title">עמוד יזכור</h1>
           <p className="hero-description"> עמוד "יזכור" נועד להנצחת זכרם של נופלים, חללים או דמויות יקרות ללב שנפטרו. העמוד מהווה מקום שקט ומכובד שבו גולשים יכולים להתחבר לזיכרון, להדליק נר וירטואלי, לקרוא אודות חייהם ופועלם של המונצחים, ולשתף זיכרונות אישיים.
 
@@ -206,7 +212,6 @@ const Remember = () => {
                 <div className="memorial-card-picture">
                   <img src={card.image} alt={card.title} />
                   
-                  {/* 🔥 נר נשמה */}
                   <img
                     src="/candle.png"
                     alt="נר נשמה"
@@ -266,6 +271,13 @@ const Remember = () => {
                 <div className="memorial-modal-description">
                   <p>{selectedCard.fullDescription}</p>
                 </div>
+                
+                {/* New button added at the bottom left of the modal */}
+                <button 
+                  className="modal-action-button"
+                  onClick={handleActionButtonClick}>
+                  לתחקיר
+                </button>
               </div>
             </div>
           </div>
