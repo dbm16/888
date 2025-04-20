@@ -39,6 +39,10 @@
   width: 65vh; 
   transition: transform 0.4s ease, box-shadow 0.4s ease;
   display: block;
+} 
+
+.mission-image-container:hover .mission-image {
+  transform: scale(1.05);
 }
 
 .dot-image {

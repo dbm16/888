@@ -59,7 +59,7 @@
   }
   
   .hero-description {
-    font-size: clamp(20px, 2.5vw, 35px);
+    font-size: clamp(20px, 2.0vw, 35px);
     font-family: 'AlmoniTzarRegular';
     line-height: 1.5;
     margin: 10px 0 0px 0;
@@ -99,7 +99,7 @@
   }
   
   .cta-button:hover::after {
-    transform: translateY(3px);
+    transition: transform var(--transition-speed) ease;
   }
   
   

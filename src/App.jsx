@@ -13,7 +13,7 @@ const App = () => {
     // Hide splash screen after 3.5 seconds (slightly longer than the animation)
     const timer = setTimeout(() => {
       setShowSplash(false);
-    }, 3500);
+    }, 3800);
     
     return () => clearTimeout(timer);
   }, []);

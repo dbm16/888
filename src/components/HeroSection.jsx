@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './HeroSection.css';
+import ErrorPopup from './ErrorPopup';
 
 const HeroSection = () => {
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
+  const [showErrorPopup, setShowErrorPopup] = useState(false);
 
   const backgroundImages = [
     './image1.png',
@@ -19,11 +21,13 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, [backgroundImages.length]);
 
-  const scrollToMission = () => {
-    const missionSection = document.getElementById('mission');
-    if (missionSection) {
-      missionSection.scrollIntoView({ behavior: 'smooth' });
-    }
+  const ShowPopUp = () => {
+    // Instead of scrolling, now show the error popup
+    setShowErrorPopup(true);
+  };
+
+  const handleClosePopup = () => {
+    setShowErrorPopup(false);
   };
 
   return (
@@ -49,15 +53,15 @@ const HeroSection = () => {
           <p className="hero-description">
             אתר ניהול הידע של היחידה הרב ממדית המאגד את כלל הנהלים , הפקודות והתרבות הארגונית של היחידה.
           </p>
-          <button className="cta-button" onClick={scrollToMission}>ראה עוד</button>
+          <button className="cta-button" onClick={ShowPopUp}>ראה עוד</button>
         </div>
       </div>
-
-     
 
       <div className="support-action">
         <button className="support-button">תמיכה 888</button>
       </div>
+
+      {showErrorPopup && <ErrorPopup onClose={handleClosePopup} />}
     </section>
   );
 };

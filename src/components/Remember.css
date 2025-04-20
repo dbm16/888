@@ -1,3 +1,11 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: clip; 
+  direction: rtl;
+}
+
 .rememb-section {
   position: relative;
   width: 100vw;
@@ -11,14 +19,6 @@
   direction: rtl;
   box-sizing: border-box;
 }
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  overflow-x: clip; 
-  direction: rtl;
-}
-
 .hero-content {
   max-width: clamp(300px, 50vw, 800px);
   margin-right: clamp(20px, 8%, 133px);
@@ -359,6 +359,7 @@ html, body {
 
 .memorial-modal-info {
   padding: 30px;
+  padding-bottom: 80px; /* Increased padding to make room for the buttons */
   overflow-y: auto;
   max-height: 350px;
 }
@@ -379,21 +380,41 @@ html, body {
   color: #fff;
   margin-bottom: 20px;
 }
-.modal-action-button {
+
+/* New buttons container styling */
+.modal-buttons-container {
+  display: flex;
+  justify-content: space-between;
   position: absolute;
   bottom: 18px;
-  left: 35px;
-  padding: 10px 20px;
+  left: 20px;
+  right: 20px;
+  z-index: 5;
+  direction: rtl;
+}
+
+.modal-action-button {
+  padding: 10px 15px;
   background-color: #fbd784;
   color: #0B1D26;
   border: none;
   border-radius: 8px;
-  font-size: 24px;
+  font-size: 23px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.2s ease;
-  z-index: 5;
-  direction: rtl;
+  padding: 8px 10px;
+  flex: 1;
+  margin: 0 8px;
+  text-align: center;
+}
+
+.modal-action-button:first-child {
+  margin-right: 0;
+}
+
+.modal-action-button:last-child {
+  margin-left: 0;
 }
 
 .modal-action-button:hover {
@@ -402,23 +423,7 @@ html, body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Adjust the modal content bottom padding to make room for the button */
-.memorial-modal-info {
-  padding: 30px;
-  padding-bottom: 60px; /* Increased padding to make room for the button */
-  overflow-y: auto;
-  max-height: 350px;
-}
-
-/* Mobile responsiveness for the button */
-@media (max-width: 767px) {
-  .modal-action-button {
-    padding: 8px 16px;
-    font-size: 14px;
-  }
-}
-
-/* Responsive adjustments */
+/* Mobile responsiveness for the buttons */
 @media (max-width: 767px) {
   .memorial-modal-image {
     height: 200px;
@@ -438,6 +443,8 @@ html, body {
   .memorial-modal-description {
     font-size: 14px;
   }
+  
+ 
 }
 
 /* For very small screens */
@@ -455,4 +462,14 @@ html, body {
     max-height: 250px;
   }
   
+  .modal-buttons-container {
+    flex-direction: column;
+    bottom: 10px;
+    left: 15px;
+    right: 15px;
+  }
+  
+  .modal-action-button {
+    margin: 4px 0;
+  }
 }

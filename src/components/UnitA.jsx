@@ -67,21 +67,16 @@ const Remember = () => {
         ))}
       </div>
 
-      <div className="hero-container">
-        <div className="hero-content">
-          <div className="logo-container">
-            <img src="/logo.png" alt="Military Emblem" className="logounit" />
-          </div>
+      <div className="unit-container">
+        <div className="unit-content">
+          
         
-          <h1 className="hero-title">מבנה וארגון</h1>
+          <h1 className="unit-title">מבנה וארגון</h1>
         </div>
       </div>
 
 <div className="menu-cards-wrapper">
-  <div className='rem-die'>
-    <p className="rem-description">תפריט מהיר</p>
-  </div>
-  
+ 
   {/* הוספת מיכל הכפתורים */}
   <div className="menu-buttons-container">
     <button className="menu-button glow-effect">הצגת היחידה</button>

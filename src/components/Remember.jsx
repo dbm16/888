@@ -50,11 +50,10 @@ const Remember = () => {
   ];
 
   // Function to handle action button click
-  const handleActionButtonClick = (e) => {
-    e.stopPropagation(); // Prevent closing the modal
-    // Add your button click logic here
-    console.log("Action button clicked for:", selectedCard.title);
-    // You could implement sending condolences, sharing the memorial, etc.
+  const handleActionButtonClick = (action, e) => {
+    e.stopPropagation(); 
+    console.log(`${action} button clicked for:`, selectedCard.title);
+    // Add your specific action logic here
   };
 
   // Effect for background image rotation
@@ -97,7 +96,6 @@ const Remember = () => {
     setSelectedCard(null);
   };
 
-  // פונקציה לגלילה לכרטיס ספציפי
   const scrollToCard = (index) => {
     if (!cardsContainerRef.current) return;
     
@@ -108,11 +106,9 @@ const Remember = () => {
     
     const card = cards[index];
     
-    // חישוב מיקום מרכז הכרטיס
     const containerCenter = container.offsetWidth / 2;
     const cardCenter = card.offsetWidth / 2;
     
-    // חישוב מרחק הגלילה הדרוש, מותאם ל-RTL
     const scrollPosition = card.offsetLeft - containerCenter + cardCenter;
     
     container.scrollTo({
@@ -121,15 +117,13 @@ const Remember = () => {
     });
   };
 
-  // גלילה בעזרת הכפתורים
   const scrollCards = (direction) => {
     if (!cardsContainerRef.current) return;
     
     const container = cardsContainerRef.current;
     const currentScroll = container.scrollLeft;
-    const cardWidth = 300 + 30; // רוחב הכרטיס + רווח
-    
-    // התאמה לכיוון RTL
+    const cardWidth = 300 + 30;
+
     const scrollAmount = direction === 'right' ? -cardWidth : cardWidth;
     
     container.scrollTo({
@@ -272,12 +266,24 @@ const Remember = () => {
                   <p>{selectedCard.fullDescription}</p>
                 </div>
                 
-                {/* New button added at the bottom left of the modal */}
-                <button 
-                  className="modal-action-button"
-                  onClick={handleActionButtonClick}>
-                  לתחקיר
-                </button>
+                {/* 3 buttons in a row at the bottom of the modal */}
+                <div className="modal-buttons-container">
+                  <button 
+                    className="modal-action-button"
+                    onClick={(e) => handleActionButtonClick('תחקיר', e)}>
+                    לתחקיר
+                  </button>
+                  <button 
+                    className="modal-action-button"
+                    onClick={(e) => handleActionButtonClick('הנצחה', e)}>
+                    לסיפור חייו
+                  </button>
+                  <button 
+                    className="modal-action-button"
+                    onClick={(e) => handleActionButtonClick('שיתוף', e)}>
+                    מקום מנוחתו
+                  </button>
+                </div>
               </div>
             </div>
           </div>
